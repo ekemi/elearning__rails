@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :reviews, through: :students
 
   
-  s
+
   devise :database_authenticatable, :registerable,#sing up and log in
          :recoverable, :rememberable, :validatable # optional
 end

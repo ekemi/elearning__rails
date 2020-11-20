@@ -1,0 +1,13 @@
+
+<% if object.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(object.errors.count, "error") %> prohibited this <%=object.class.name%> from being created:</h2>
+
+  <ul>
+  <% object.errors.full_messages.each do |st| %>
+    <li><%= st %></li>
+  <% end %>
+  </ul>
+</div>
+<% end%>
+#where instance variable occurs, replace it by object or record

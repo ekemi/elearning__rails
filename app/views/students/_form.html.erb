@@ -1,0 +1,14 @@
+<%= display_errors_for(student)%>
+<%= form_for student do |f|%>
+    <%=f.label :name, "Student Name"%>
+    <%=f.text_field :name%>
+    <br><br>
+    <%=f.label :studentID, "Student ID:"%>
+    <%=f.text_field :studentID%>
+    <br><br>
+    <%=f.submit "Create a new student"%>
+<%end%>
+
+#in a partial local variable is better because we will be able to understand it.
+
+#In the partial remove instance variable

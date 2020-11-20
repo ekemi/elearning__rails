@@ -1,1 +1,11 @@
 <h1>All students</h1>
+<%=link_to 'Add a student',new_student_path%> 
+<% @students.each do |student| %>
+    
+    <p> Student Name:<%= link_to student.name, student_path(student)%> </p>
+    <p> Student Identification:<%=student.studentID%> </p><br><br>
+    
+    <%end%>
+
+
+    #if you are not remembering look the route
