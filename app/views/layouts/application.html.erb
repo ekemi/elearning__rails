@@ -13,18 +13,7 @@
   #create the parent first before the childreen
   #it is better to put your navbar here so it can be display on all pages
   #after resource we precise the column name and add data type if int
-  
-  <nav>
-  <%=link_to 'Students', students_path%>
-  <%if user_signed_in?%>
-  <%=form_tag(destroy_user_session_path, method: :delete, style: "display:inline-block;") do %>
-    <%=submit_tag "Sign Out"%>
-    <%end%>
-    <%else%>
-    <%=link_to 'Sign Up', new_user_registration_path%>
-    <%=link_to 'Sign In',new_user_session_path%>
-    <%end%>
-  </nav>
+  <%=render partial: 'errors/navBar'%>
   
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>

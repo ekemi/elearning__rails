@@ -4,10 +4,22 @@ class CoursesController < ApplicationController
 
 
 
-
-def index
+def po 
     @courses = Course.all
 end
+def index
+    @querry = params[:search]
+    if params[:search].blank?
+        redirect_to(root_path, alert: "Empty field!")
+    elsif
+        @results = Course.search(params[:search]) 
+    else
+        @results = Course.all.beta  
+        redirect_to(root_path, alert: "Not find")
+    end
+end   
+
+
 def show
 end
 
@@ -16,9 +28,9 @@ def new
 end
 
 def create
-   @course = Course.new(doctor_params)
+   @course = Course.new(course_params)
    if @course.save
-    redirect_to course_path(@couse)
+    redirect_to course_path(@course)
    else
     render :new
    end
@@ -28,7 +40,7 @@ def edit
 end
 
 def update
-     
+
 end
 
 def destroy 
@@ -40,6 +52,6 @@ def set_course
 end
 
 def course_params
-    params.require(:course).permit(:course_name,:profesor_name,:length,:number_videos)
+    params.require(:course).permit(:course_name,:profesor_name,:length,:number_videos, :search)
 end
 end
