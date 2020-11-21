@@ -9,5 +9,11 @@ class User < ApplicationRecord
   
 
   devise :database_authenticatable, :registerable,#sing up and log in
-         :recoverable, :rememberable, :validatable # optional
+         :recoverable, :rememberable, :validatable,  :omniauthable, omniauth_providers: [:google_oauth2] # optional
+
+         def self.fromGoogle(email:, full_name:, uid:, avatar_url:)
+          create_with(uid: uid, full_name: full_name, avatar_url: avatar_url).find_or_create_by!(email: email)
+        
+      
+         end
 end

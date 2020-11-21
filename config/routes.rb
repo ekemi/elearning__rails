@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   #1/patients/:patient_id/doctors
   #1/patients/:patient_id/appointements
   #2/patients/patient_id/appointemnt/new
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root 'students#index'#devise require a root route
   get'/pos/', to: 'courses#po'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
