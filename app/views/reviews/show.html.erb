@@ -1,0 +1,12 @@
+<h1> Review details</h1>
+<di>
+<p>Student Name <%= link_to @review.student.name,student_path(@review.student)%>
+<p>Profesor Name <%= link_to @review.course.profesor_name,course_path(@review.course)%>
+<p>Rate : <%=@review.rating%></p>
+<p>Comments : <%=@review.comments%></p>
+</div>
+<%=link_to "Edit review", edit_review_path(@review)%>
+
+<%= form_tag(review_path(@review),method: :delete, style:'display:inline-block;') do %>
+<%=submit_tag "Delete Review"%>
+<%end%>

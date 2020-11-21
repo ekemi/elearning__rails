@@ -1,0 +1,15 @@
+<h1> Reviews</h1>
+<button> <%=link_to "Add a review", new_review_path%></button>
+
+<%@reviews.each do |reviewed|%>
+    <div>
+    <span>Rating :<%=reviewed.rating%></span><br>
+    <span>Comments: <%= reviewed.comments%></span>
+    <p><%=link_to 'review', review_path(reviewed)%>
+     <span> For<%=link_to reviewed.course.profesor_name, course_path(reviewed.course)%></span>
+     <span>By student ID: <%=link_to reviewed.student_ID , student_path(reviewed.student)%></span>
+    </p>
+     </div>
+    <%end%>
+
+    #belongs to

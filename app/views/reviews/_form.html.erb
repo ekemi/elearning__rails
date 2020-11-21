@@ -1,0 +1,24 @@
+<%= display_errors_for(review)%>
+<%= form_for review do |f|%>
+
+    #method,
+    #collect
+    #method
+    #text to see
+    <div>
+    <%= f.label :student_id, "Students"%>
+    <%=f.collection_select :student_id,current_user.students,:id,:name%>
+    </div> <br>
+    <div>
+    <%= f.label :student_id, "Profesor Names"%>
+    <%=f.collection_select :course_id,Course.all,:id,:profesor_name%>
+    </div><br>
+
+    <%=f.label :rating, "Ratings"%>
+    <%=f.number_field :rating%>
+    <br><br>
+    <%=f.label :comments, "Comments:"%>
+    <%=f.text_field :comments%>
+    <br><br>
+    <%=f.submit "Create a Review"%>
+<%end%>

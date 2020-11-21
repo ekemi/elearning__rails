@@ -1,5 +1,6 @@
-<p>Student Name:  <%=@student.name%></p>
+<p>  <%=@student.name%></p>
 
+<p><%= link_to"#{@student.name}'s reviews",student_reviews_path(@student)%>
 <p><%=link_to 'Edit a student', edit_student_path(@student)%></p>
 
 <%= form_tag(student_path(@student), :method => "delete") do %>
