@@ -4,8 +4,7 @@ class Course < ApplicationRecord
 
     validates :course_name, :profesor_name,:length,:number_videos, presence: true
 
-scope :beta,->{order('LOWER(course_name)')} #Lower to make it case insensitive
-
+scope :beta,->{order('LOWER(course_name)')} 
 def self.search (course_name)
     Course.where("course_name LIKE ?", "%#{course_name}%").beta
 

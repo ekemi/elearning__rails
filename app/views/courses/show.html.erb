@@ -1,5 +1,7 @@
 
   <p>Course Name:  <%=@course.course_name%></p>
-  <p><%=link_to "Give a Review to #{@course.profesor_name}",new_student_review_path(@course)%></p>
+  <p style="border: 2px solid red; border-radius: 5px; text-align:center; background-color:orange;">
+  
+  <%=link_to "Give a Review to #{@course.profesor_name}",new_student_review_path(@course)%></p>
   
     

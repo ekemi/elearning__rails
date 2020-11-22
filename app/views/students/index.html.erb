@@ -1,11 +1,24 @@
-<h1>All students</h1>
+<div style="border: 2px solid red; 
+border-radius: 25px; text-align:center; background-color:orange;">
+
+
+All students
+</div> <br> 
+
+<div style="border: 2px solid red; 
+border-radius: 25px; text-align:center; background-color:orange;">
+
 <%=link_to 'Add a student',new_student_path%> 
+
+</div><br>
+
 <% @students.each do |student| %>
-    
+    <div style="border: 2px solid red; 
+    border-radius: 25px; text-align:center; background-color:orange; color:blue;">
     <p> Student Name:<%= link_to student.name, student_path(student)%> </p>
-    <p> Student Identification:<%=student.studentID%> </p><br><br>
+    <p> Student Identification:<%=student.studentID%> </p><br><br><div>
     
     <%end%>
 
 
-    #if you are not remembering look the route
+    

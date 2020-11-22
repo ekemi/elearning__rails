@@ -1,12 +1,21 @@
-<h1> Review details</h1>
-<di>
+<h1  style="border: 2px solid red; 
+border-radius: 25px; text-align:center; background-color:orange;"> 
+Review details
+
+</h1>
+<div style ="background-color:#0B103D; color: white;border: 2px solid red; 
+border-radius: 25px; text-align:center;">
 <p>Student Name <%= link_to @review.student.name,student_path(@review.student)%>
 <p>Profesor Name <%= link_to @review.course.profesor_name,course_path(@review.course)%>
 <p>Rate : <%=@review.rating%></p>
 <p>Comments : <%=@review.comments%></p>
 </div>
+<p style = "border: 2px solid red; 
+border-radius: 25px; text-align:center; background-color:orange;"> 
 <%=link_to "Edit review", edit_review_path(@review)%>
+</p>
 
-<%= form_tag(review_path(@review),method: :delete, style:'display:inline-block;') do %>
+<p style="text-align:center;"> <%= form_tag(review_path(@review),method: :delete) do %>
 <%=submit_tag "Delete Review"%>
 <%end%>
+</p>

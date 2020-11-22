@@ -1,8 +1,16 @@
-<h1> Reviews</h1>
+<h1 style ="background-color:#0B103D; color: white;border: 2px solid red; 
+border-radius: 25px; text-align:center;"> 
+
+Reviews
+
+</h1>
 <button> <%=link_to "Add a review", new_review_path%></button>
 
 <%@reviews.each do |reviewed|%>
-    <div>
+    <div style ="background-color:#0B103D; color: white;border: 2px solid red; 
+    border-radius: 25px; text-align:center; display-style:none;">
+
+
     <span>Rating :<%=reviewed.rating%></span><br>
     <span>Comments: <%= reviewed.comments%></span>
     <p><%=link_to 'review', review_path(reviewed)%>
@@ -12,4 +20,3 @@
      </div>
     <%end%>
 
-    #belongs to

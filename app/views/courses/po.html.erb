@@ -1,4 +1,6 @@
+<div style="border: 2px solid red; border-radius: 5px; text-align:center; background-color:orange;">
 <%@courses.each do |course|%>
 <%=link_to course.course_name, course_path(course)%><br><br>
 <%end%>
 <%= link_to "Add a course" , new_course_path%>
+</div>

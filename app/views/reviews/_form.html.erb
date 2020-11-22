@@ -1,11 +1,8 @@
 <%= display_errors_for(review)%>
 <%= form_for review do |f|%>
 
-    #method,
-    #collect
-    #method
-    #text to see
-    <div>
+    <div style ="background-color:#0B103D; color: white;border: 2px solid red; 
+    border-radius: 25px; text-align:center;">
     <%= f.label :student_id, "Students"%>
     <%=f.collection_select :student_id,current_user.students,:id,:name%>
     </div> <br>
@@ -21,4 +18,5 @@
     <%=f.text_field :comments%>
     <br><br>
     <%=f.submit "Create a Review"%>
+    </div>
 <%end%>

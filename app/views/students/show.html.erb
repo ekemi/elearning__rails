@@ -1,8 +1,18 @@
-<p>  <%=@student.name%></p>
+<p style="border: 2px solid red; border-radius: 5px; text-align:center; background-color:orange;>  
 
-<p><%= link_to"#{@student.name}'s reviews",student_reviews_path(@student)%>
-<p><%=link_to 'Edit a student', edit_student_path(@student)%></p>
+<%=@student.name%>
+</p>
 
+<p style="border: 2px solid red; border-radius: 5px; text-align:center; background-color:orange;">
+
+<%= link_to"#{@student.name}'s reviews",student_reviews_path(@student)%>
+
+</p>
+<p style="border: 2px solid red; border-radius: 5px; text-align:center; background-color:orange;">
+<%=link_to 'Edit a student', edit_student_path(@student)%>
+</p>
+<div style="border: 2px solid red; border-radius: 5px; text-align:center; background-color:orange;"
 <%= form_tag(student_path(@student), :method => "delete") do %>
 <%= submit_tag "Delete Student" %>
+</div>
 <%end%>
